@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>유진에게 💌</title>
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #fdeff2, #f9c5d1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 340px;
+      text-align: center;
+    }
+
+    /* 봉투 */
+    .envelope {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .envelope:active {
+      transform: scale(0.97);
+    }
+
+    .envelope-title {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .envelope-sub {
+      font-size: 14px;
+      color: #888;
+    }
+
+    /* 편지 */
+    .letter {
+      display: none;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .letter h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .letter p {
+      font-size: 16px;
+      line-height: 1.7;
+      white-space: pre-line;
+      margin-bottom: 24px;
+    }
+
+    .signature {
+      font-size: 12px;
+      color: #aaa;
+      text-align: right;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- 봉투 화면 -->
+    <div class="envelope" id="envelope" onclick="openLetter()">
+      <div class="envelope-title">💌</div>
+      <div class="envelope-sub">편지를 눌러주세요</div>
+    </div>
+
+    <!-- 편지 내용 -->
+    <div class="letter" id="letter">
+      <h1>🎉 유진의 생일을 축하해!!</h1>
+      <p>
+앞으로 같은 방향을 바라보며 걸어갈 수 있어서 참 든든하고 고마워.
+지금처럼 서로 웃고 아끼는 것 변하지 않도록 열심히 노력할게.
+태어나줘서 고마워요.
+      </p>
+      <div class="signature">
+        from. 항상 네 편
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("envelope").style.display = "none";
+      document.getElementById("letter").style.display = "block";
+    }
+  </script>
+</body>
+</html>
